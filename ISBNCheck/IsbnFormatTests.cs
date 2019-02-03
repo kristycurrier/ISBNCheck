@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace ISBNCheck
 {
     [TestFixture]
-    public class IsbnFormatTest
+    public class IsbnFormatTests
     {
         [Test]
         public void is_valid_isbn_format_dashes()
@@ -21,7 +21,14 @@ namespace ISBNCheck
         public void is_valid_isbn_format_spaces()
         {
             string isbn = "978 1 86197 876 9";
-            Assert.AreEqual(true, IsbnFormat.CorrectFormat(isbn));
+            Assert.AreEqual(true , IsbnFormat.CorrectFormat(isbn));
+        }
+
+        [Test]
+        public void is_not_valid_isbn_format()
+        {
+            string isbn = "929-k-87938-987-9";
+            Assert.AreNotEqual(true, IsbnFormat.CorrectFormat(isbn));
         }
 
         [Test]

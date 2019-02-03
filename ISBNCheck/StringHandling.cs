@@ -26,5 +26,17 @@ namespace ISBNCheck
             return input;
         }
 
+        public static List<int> isbnStringToList(string isbn)
+        {
+            List<int> list = new List<int>();
+
+            for (int i = 0; i < isbn.Length; i++)
+            {
+                int num = int.Parse(isbn[i].ToString());
+                list.Add(num);
+            }
+            return list;
+        }
+
     }
 }

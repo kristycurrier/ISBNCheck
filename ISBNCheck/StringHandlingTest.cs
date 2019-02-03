@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace ISBNCheck
 {
     [TestFixture]
-    class StringHandlingTest
+    public class StringHandlingTest
     {
         [Test]
         public void is_valid_string_input()
@@ -28,6 +28,17 @@ namespace ISBNCheck
             Assert.AreEqual("abc", inputRemoved);
         }
 
+        [Test]
+        public void string_is_converted_to_list()
+        {
+            List<int> listOfNum = new List<int>();
+            listOfNum.Add(1);
+            listOfNum.Add(2);
+            listOfNum.Add(3);
 
+            List<int> functionList = StringHandling.isbnStringToList("123");
+
+            Assert.AreEqual(listOfNum, functionList);
+        }
     }
 }

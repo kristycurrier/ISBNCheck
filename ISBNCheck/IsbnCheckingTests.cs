@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,10 +7,14 @@ using System.Threading.Tasks;
 
 namespace ISBNCheck
 {
-    class Program
+    [TestFixture]
+    public class IsbnCheckingTests
     {
-        static void Main(string[] args)
+        [Test]
+        public void first_12_isbn_equals_sum()
         {
+            int first12 = 93;
+
             List<int> isbn = new List<int>();
             isbn.Add(9);
             isbn.Add(7);
@@ -24,10 +29,8 @@ namespace ISBNCheck
             isbn.Add(1);
             isbn.Add(5);
 
-            int answer = IsbnChecking.first12IsbnSum(isbn);
-
-            Console.ReadKey();
-
+            Assert.AreEqual(first12, IsbnChecking.first12IsbnSum(isbn));
         }
+
     }
 }
