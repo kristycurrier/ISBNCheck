@@ -33,7 +33,6 @@ namespace ISBNCheck
             Assert.AreEqual(first12, IsbnChecking.First12IsbnSum(isbn));
         }
 
-
         [Test]
         public void isbn_check_digit_equals_mod10()
         {

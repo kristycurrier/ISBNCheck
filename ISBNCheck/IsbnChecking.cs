@@ -46,20 +46,18 @@ namespace ISBNCheck
 
         public static bool CheckDigitIsCorrect(string isbn)
         {
-            if (IsbnFormat.CorrectFormat(isbn) == false)   
-            {
-                return false;
-            }
-            if(StringHandling.IsValidInput(isbn) == false)
+            if (IsbnFormat.CorrectFormat(isbn) == false || StringHandling.IsValidInput(isbn) == false)   
             {
                 return false;
             }
                 
             isbn = StringHandling.RemoveWhiteSpaceAndDashes(isbn);
+
             if (IsbnFormat.ContainsNumbers(isbn) == false)
             {
                 return false;
             }
+
             List<int> isbnList = StringHandling.isbnStringToList(isbn);
             int checkDigit = CheckDigit(isbnList);
 

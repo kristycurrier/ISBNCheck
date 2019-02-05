@@ -37,6 +37,5 @@ namespace ISBNCheck
             }
             return list;
         }
-
     }
 }
