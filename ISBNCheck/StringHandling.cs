@@ -10,8 +10,8 @@ namespace ISBNCheck
     {
         public static bool IsValidInput(string input)
         {
-            bool validInput = String.IsNullOrEmpty(input);
-            if (validInput == true)
+            bool NotValidInput = String.IsNullOrEmpty(input);
+            if (NotValidInput == true)
             {
                 return false;
             }

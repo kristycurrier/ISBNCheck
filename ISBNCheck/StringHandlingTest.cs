@@ -13,7 +13,7 @@ namespace ISBNCheck
         [Test]
         public void is_valid_string_input()
         {
-            bool validInput = StringHandling.IsValidInput(" ");
+            bool validInput = StringHandling.IsValidInput("aa");
 
             Assert.AreEqual(true, validInput);
         }

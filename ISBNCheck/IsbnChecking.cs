@@ -8,7 +8,7 @@ namespace ISBNCheck
 {
     class IsbnChecking
     {
-        public static int first12IsbnSum(List<int> isbn)
+        public static int First12IsbnSum(List<int> isbn)
         {
             int num = 0;
 
@@ -27,9 +27,50 @@ namespace ISBNCheck
                     int isbnNum = isbn[j -1] * 1;
                     num += isbnNum;
                 }
-
             }
             return num;
+        }
+
+        public static int CheckDigit(List<int> isbn)
+        {
+            int isbn12Sum= First12IsbnSum(isbn);
+
+            int checkDigit = 10- (isbn12Sum % 10);
+
+            if (checkDigit == 10)
+            {
+                checkDigit = 0;
+            }
+            return checkDigit;
+        }
+
+        public static bool CheckDigitIsCorrect(string isbn)
+        {
+            if (IsbnFormat.CorrectFormat(isbn) == false)   
+            {
+                return false;
+            }
+            if(StringHandling.IsValidInput(isbn) == false)
+            {
+                return false;
+            }
+                
+            isbn = StringHandling.RemoveWhiteSpaceAndDashes(isbn);
+            if (IsbnFormat.ContainsNumbers(isbn) == false)
+            {
+                return false;
+            }
+            List<int> isbnList = StringHandling.isbnStringToList(isbn);
+            int checkDigit = CheckDigit(isbnList);
+
+            if (checkDigit == isbnList[12])
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
