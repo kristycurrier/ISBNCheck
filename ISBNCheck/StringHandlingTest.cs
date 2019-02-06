@@ -36,7 +36,7 @@ namespace ISBNCheck
             listOfNum.Add(2);
             listOfNum.Add(3);
 
-            List<int> functionList = StringHandling.isbnStringToList("123");
+            List<int> functionList = StringHandling.IsbnStringToList("123");
 
             Assert.AreEqual(listOfNum, functionList);
         }

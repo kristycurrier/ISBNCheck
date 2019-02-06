@@ -26,7 +26,7 @@ namespace ISBNCheck
             return input;
         }
 
-        public static List<int> isbnStringToList(string isbn)
+        public static List<int> IsbnStringToList(string isbn)
         {
             List<int> list = new List<int>();
 

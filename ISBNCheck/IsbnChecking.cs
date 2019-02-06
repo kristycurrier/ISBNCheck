@@ -58,7 +58,7 @@ namespace ISBNCheck
                 return false;
             }
 
-            List<int> isbnList = StringHandling.isbnStringToList(isbn);
+            List<int> isbnList = StringHandling.IsbnStringToList(isbn);
             int checkDigit = CheckDigit(isbnList);
 
             if (checkDigit == isbnList[12])
